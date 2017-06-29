@@ -14,12 +14,18 @@ public class SearchActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search);
 
-        final Class previousScreen = (Class) getIntent().getExtras().get("previousScreen");
+        Bundle extras = getIntent().getExtras();
+        final Class previousScreen = extras != null ? (Class) extras.get("previousScreen") : null;
+
+        Button myAlbumsButton = (Button) findViewById(R.id.my_albums_button);
+        myAlbumsButton.setOnClickListener(new OnClickChangeIntentListener(this, MyAlbumsActivity.class));
+
+
         Button backButton = (Button) findViewById(R.id.back_button);
 
-        if (previousScreen==null){
+        if (previousScreen == null) {
             backButton.setOnClickListener(new OnClickChangeIntentListener(this, MainMenuActivity.class));
-        }else {
+        } else {
             backButton.setOnClickListener(new OnClickChangeIntentListener(this, previousScreen));
         }
 

@@ -28,10 +28,12 @@ public class NowPlayingActivity extends AppCompatActivity {
         ImageView nextButton = (ImageView) findViewById(R.id.next_button);
         ImageView previousButton = (ImageView) findViewById(R.id.previous_button);
 
-        final Class previousScreen = (Class) getIntent().getExtras().get("previousScreen");
-        Button backButton = (Button) findViewById(R.id.back_button);
+        Bundle extras = getIntent().getExtras();
+        final Class previousScreen = extras != null ? (Class) extras.get("previousScreen") : null;
 
         SongsPlayer player = new SongsPlayer("song", playPauseButton);
+
+        Button backButton = (Button) findViewById(R.id.back_button);
 
         if (previousScreen == null) {
             backButton.setOnClickListener(new OnClickChangeIntentListener(this, MainMenuActivity.class));
@@ -39,6 +41,14 @@ public class NowPlayingActivity extends AppCompatActivity {
             backButton.setOnClickListener(new OnClickChangeIntentListener(this, previousScreen));
         }
 
+
+        Button moreMusicButton = (Button) findViewById(R.id.more_muic_button);
+
+        if (previousScreen == BuyNewAlbumActivity.class) {
+            moreMusicButton.setOnClickListener(new OnClickChangeIntentListener(this, MyAlbumsActivity.class));
+        } else {
+            moreMusicButton.setOnClickListener(new OnClickChangeIntentListener(this, BuyNewAlbumActivity.class));
+        }
 
         albumName.setOnClickListener(new OnClickChangeIntentListener(this, AlbumDetailsActivity.class, getClass()));
         albumImage.setOnClickListener(new OnClickChangeIntentListener(this, AlbumDetailsActivity.class, getClass()));

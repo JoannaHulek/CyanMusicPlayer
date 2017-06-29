@@ -114,6 +114,7 @@
             style="@style/ButtonStyle"
             android:background="@drawable/rounded_corners"
             android:layout_alignParentLeft="true"
+
             android:id="@+id/play_button"
             android:text="@string/play" />
 
@@ -124,6 +125,7 @@
             android:layout_height="wrap_content"
             android:background="@drawable/rounded_corners"
             android:layout_alignParentRight="true"
+
             android:text="@string/back" />
     </RelativeLayout>
 

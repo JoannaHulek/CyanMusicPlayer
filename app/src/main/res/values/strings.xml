@@ -23,4 +23,6 @@
     <string name="price">Price</string>
     <string name="buy_new_album">buy new album</string>
     <string name="music_shop_click_price_button_to_buy_album">Music Shop - click Price button to buy album</string>
+    <string name="more">more</string>
+    <string name="payment_api_description">I have found www.simplify.com to be pretty simple and fast to implement API for payment. I have created account to generate my personal public api key for test purposes. Then I have added this library (com.simplify:simplify-android) to my gradle config. Then i have followed the instructions inthe tutorial. I have added com.simplify.android.sdk.CardEditor to my xml. Then I have added my public key to java Simplify object. Then i was planning to add checkout Button that will appear when all card data will be filled in CardEditor component.It can be done with addOnStateChangeListener method. If the card data is correct and user will click checkout then simplify should transfer money on my account and when money will be on my account user will receive the item</string>
 </resources>

@@ -43,13 +43,29 @@
         </LinearLayout>
     </ScrollView>
 
-    <Button
-        android:id="@+id/back_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        style="@style/ButtonStyle"
-        android:layout_gravity="right"
-        android:background="@drawable/rounded_corners"
-        android:text="@string/back" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/my_albums_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/ButtonStyle"
+android:layout_alignParentLeft="true"
+            android:background="@drawable/rounded_corners"
+            android:text="@string/my_albums" />
+
+        <Button
+            android:id="@+id/back_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/ButtonStyle"
+android:layout_alignParentRight="true"
+            android:background="@drawable/rounded_corners"
+            android:text="@string/back" />
+    </RelativeLayout>
+
+
 
 </LinearLayout>

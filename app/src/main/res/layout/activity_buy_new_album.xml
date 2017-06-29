@@ -4,16 +4,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:background="@color/colorBackground"
+    android:orientation="vertical"
     tools:context="com.example.joannahulek.cyanmusicplayer.BuyNewAlbumActivity">
 
     <TextView
+        android:id="@+id/label_text_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/label_text_view"
-        android:layout_margin="20dp"
-        android:text="@string/music_shop_click_price_button_to_buy_album"/>
+        android:padding="20dp"
+        android:text="@string/music_shop_click_price_button_to_buy_album" />
 
 
     <ScrollView
@@ -25,7 +25,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="20dp"
+            android:padding="20dp"
             android:orientation="vertical">
 
             <TableLayout
@@ -36,18 +36,18 @@
                 <TableRow>
 
                     <TextView
-                        android:layout_column="1"
                         style="@style/HeaderStyle"
+                        android:layout_column="1"
                         android:text="@string/title" />
 
                     <TextView
-                        android:layout_column="2"
                         style="@style/HeaderStyle"
+                        android:layout_column="2"
                         android:text="@string/author" />
 
                     <TextView
-                        android:layout_column="3"
                         style="@style/HeaderStyle"
+                        android:layout_column="3"
                         android:text="@string/price" />
 
                 </TableRow>
@@ -59,55 +59,75 @@
                 <TableRow>
 
                     <TextView
-                        android:layout_column="1"
-                        style="@style/TextStyle"
                         android:id="@+id/album_name"
+                        style="@style/TextStyle"
+                        android:layout_column="1"
                         android:layout_gravity="center"
                         android:text="Revolver" />
 
                     <TextView
-                        android:layout_column="2"
-                        style="@style/TextStyle"
                         android:id="@+id/artist_name"
+                        style="@style/TextStyle"
+                        android:layout_column="2"
                         android:layout_gravity="center"
                         android:text="The Beatles" />
 
                     <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:orientation="vertical"
-                        android:layout_column="3">
+                        android:layout_column="3"
+                        android:orientation="vertical">
 
-                       <Button
+                        <Button
+                            android:id="@+id/buy_album"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:id="@+id/buy_album"
                             android:layout_margin="10dp"
                             android:background="@drawable/rounded_corners"
-                            android:text="$19.88"/>
+                            android:text="$19.88" />
                     </LinearLayout>
 
                 </TableRow>
 
 
-
             </TableLayout>
 
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/payment_api_description" />
         </LinearLayout>
     </ScrollView>
 
-    <com.simplify.android.sdk.CardEditor
+   <!-- <com.simplify.android.sdk.CardEditor
         android:id="@+id/card_editor"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:visibility="invisible"/>
+        android:visibility="invisible" />-->
 
-    <Button
-        android:id="@+id/back_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        style="@style/ButtonStyle"
-        android:layout_gravity="right"
-        android:background="@drawable/rounded_corners"
-        android:text="@string/back" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/search_for_more_button"
+            style="@style/ButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:background="@drawable/rounded_corners"
+            android:text="@string/more" />
+
+        <Button
+            android:id="@+id/back_button"
+            style="@style/ButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/rounded_corners"
+            android:text="@string/back" />
+
+    </RelativeLayout>
+
+
 </LinearLayout>

@@ -25,22 +25,26 @@ public class BuyNewAlbumActivity extends AppCompatActivity {
 
         setContentView(R.layout.activity_buy_new_album);
 
-        final Class previousScreen = (Class) getIntent().getExtras().get("previousScreen");
-        Button backButton = (Button) findViewById(R.id.back_button);
+        Bundle extras = getIntent().getExtras();
+        final Class previousScreen = extras != null ? (Class) extras.get("previousScreen") : null;
 
+        Button backButton = (Button) findViewById(R.id.back_button);
         if (previousScreen == null) {
             backButton.setOnClickListener(new OnClickChangeIntentListener(this, MainMenuActivity.class));
         } else {
             backButton.setOnClickListener(new OnClickChangeIntentListener(this, previousScreen));
         }
 
+        Button searchForMoreButton = (Button) findViewById(R.id.search_for_more_button);
+        searchForMoreButton.setOnClickListener(new OnClickChangeIntentListener(this, SearchActivity.class));
+
         Button buyAlbum = (Button) findViewById(R.id.buy_album);
-        final CardEditor cardEditorView = (CardEditor) findViewById(R.id.card_editor);
+      //  final CardEditor cardEditorView = (CardEditor) findViewById(R.id.card_editor);
 
         buyAlbum.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                cardEditorView.setVisibility(VISIBLE);
+          //      cardEditorView.setVisibility(VISIBLE);
             }
         });
 

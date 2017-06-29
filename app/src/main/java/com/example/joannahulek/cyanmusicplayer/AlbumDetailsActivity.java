@@ -19,7 +19,8 @@ public class AlbumDetailsActivity extends AppCompatActivity {
         final TextView songsListTextView = (TextView) findViewById(R.id.songs_list_text_view);
         final boolean[] isSongsListShown = {false};
 
-        final Class previousScreen = (Class) getIntent().getExtras().get("previousScreen");
+        Bundle extras = getIntent().getExtras();
+        final Class previousScreen = extras != null ? (Class) extras.get("previousScreen") : null;
         Button backButton = (Button) findViewById(R.id.back_button);
 
         if (previousScreen == null) {

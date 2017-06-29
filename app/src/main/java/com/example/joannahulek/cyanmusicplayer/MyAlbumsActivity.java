@@ -14,12 +14,16 @@ public class MyAlbumsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my_albums);
 
-        final Class previousScreen = (Class) getIntent().getExtras().get("previousScreen");
+        Button buyMoreButton = (Button) findViewById(R.id.buy_more_button);
+        buyMoreButton.setOnClickListener(new OnClickChangeIntentListener(this, BuyNewAlbumActivity.class));
+
+        Bundle extras = getIntent().getExtras();
+        final Class previousScreen = extras != null ? (Class) extras.get("previousScreen") : null;
         Button backButton = (Button) findViewById(R.id.back_button);
 
-        if (previousScreen==null){
+        if (previousScreen == null) {
             backButton.setOnClickListener(new OnClickChangeIntentListener(this, MainMenuActivity.class));
-        }else {
+        } else {
             backButton.setOnClickListener(new OnClickChangeIntentListener(this, previousScreen));
         }
 
